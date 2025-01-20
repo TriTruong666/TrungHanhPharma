@@ -1,4 +1,5 @@
-#nullable disable
+using System.Text.Json;
+using Helper;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 
@@ -7,16 +8,18 @@ namespace API.Controllers;
 [Route("api/product")]
 [ApiController]
 public class ProductController : ControllerBase {
-    private string apiKey = Helper.Configuration.GetConfiguration()["Others:HaravanToken"];
+    private string apiKey = Helper.Configuration.GetConfiguration()["Others:HaravanToken"]!;
 
     [HttpGet]
     public async Task<ActionResult> GetAll(){
         try{
-            Product[] result;
-            result = await Helper.Client.GetAsync("products.json");
-            if( result == null )
-                return null;
-            return StatusCode(StatusCodes.Status200OK, result);
+            string? json = await Helper.Client.GetAsync("products.json");
+            if( json == null )
+                return StatusCode(StatusCodes.Status422UnprocessableEntity);
+            ProductsArray? temp = JsonSerializer.Deserialize<ProductsArray>(json);
+            if( temp == null )
+                return null!;
+            return StatusCode(StatusCodes.Status200OK, temp.products);
         } catch ( Exception ex ) {
             Console.WriteLine(ex);
             return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);

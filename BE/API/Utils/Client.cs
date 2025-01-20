@@ -25,16 +25,15 @@ public static class Client{
         return false;
     }
 
-    public static async Task<Product[]?> GetAsync(string endUri){
+    public static async Task<string?> GetAsync(string endUri){
         if( isTokenNull() ){
             Console.WriteLine("Appsetting is missing haravan token");
             return null;
         }
         var res = await client.GetAsync(endUri);
         string json = await res.Content.ReadAsStringAsync();
-        ProductsArray? temp = JsonSerializer.Deserialize<ProductsArray>(json);
-        if( temp == null || temp.products == null )
+        if( json == null )
             return null;
-        return temp.products;
+        return json;
     }
 }
