@@ -1,52 +1,72 @@
 [
   {
     "id": 1,
-    "name": "Áo len",
-    "image": "https://stc-zmp.zadn.vn/zaui-fashion/category/ao-len.webp"
+    "name": "Giảm Đau",
+    "image": "https://file.hstatic.net/200000211541/file/1_compact.png"
   },
   {
     "id": 2,
-    "name": "Blazer",
-    "image": "https://stc-zmp.zadn.vn/zaui-fashion/category/blazer.webp"
+    "name": "Trị Bỏng",
+    "image": "https://file.hstatic.net/200000211541/file/2_compact.png"
   },
   {
     "id": 3,
-    "name": "Đầm",
-    "image": "https://stc-zmp.zadn.vn/zaui-fashion/category/dam.webp"
+    "name": "Sản Phụ Khoa",
+    "image": "https://file.hstatic.net/200000211541/file/3_compact.png"
   },
   {
     "id": 4,
-    "name": "Áo phông",
-    "image": "https://stc-zmp.zadn.vn/zaui-fashion/category/ao-phong.webp"
+    "name": "Dược Mỹ Phẩm",
+    "image": "https://file.hstatic.net/200000211541/file/4_compact.png"
   },
   {
     "id": 5,
-    "name": "Áo gi lê",
-    "image": "https://stc-zmp.zadn.vn/zaui-fashion/category/ao-gile.webp"
+    "name": "Hỗ Trợ Hệ Tiêu Hoá",
+    "image": "https://file.hstatic.net/200000211541/file/5_compact.png"
   },
   {
     "id": 6,
-    "name": "Chân váy",
-    "image": "https://stc-zmp.zadn.vn/zaui-fashion/category/chan-vay.webp"
+    "name": "Hỗ Trợ Trĩ",
+    "image": "https://file.hstatic.net/200000211541/file/6_compact.png"
   },
   {
     "id": 7,
-    "name": "Quần short",
-    "image": "https://stc-zmp.zadn.vn/zaui-fashion/category/quan-short.webp"
+    "name": "Thực Phẩm Chức Năng",
+    "image": "https://file.hstatic.net/200000211541/file/7_compact.png"
   },
   {
     "id": 8,
-    "name": "Quần bò",
-    "image": "https://stc-zmp.zadn.vn/zaui-fashion/category/quan-jean.webp"
+    "name": "Vitamin và Khoàng Chất",
+    "image": "https://file.hstatic.net/200000211541/file/8_compact.png"
   },
   {
     "id": 9,
-    "name": "Túi xách",
-    "image": "https://stc-zmp.zadn.vn/zaui-fashion/category/tui-xach.webp"
+    "name": "Điều Trị Mụn Cóc",
+    "image": "https://file.hstatic.net/200000211541/file/9_compact.png"
   },
   {
     "id": 10,
-    "name": "Phụ kiện",
-    "image": "https://stc-zmp.zadn.vn/zaui-fashion/category/phu-kien.webp"
+    "name": "Chăm Sóc Răng Miệng",
+    "image": "https://file.hstatic.net/200000211541/file/10_compact.png"
+  },
+  {
+    "id": 11,
+    "name": "Chăm Sóc Bé",
+    "image": "https://file.hstatic.net/200000211541/file/11_compact.png"
+  },
+  {
+    "id": 12,
+    "name": "Chăm Sóc Nam Giới",
+    "image": "https://file.hstatic.net/200000211541/file/12_compact.png"
+  },
+  {
+    "id": 13,
+    "name": "Tai Mũi Họng",
+    "image": "https://file.hstatic.net/200000211541/file/13_compact.png"
+  },
+  {
+    "id": 14,
+    "name": "Thuốc",
+    "image": "https://file.hstatic.net/200000211541/file/14_compact.png"
   }
 ]

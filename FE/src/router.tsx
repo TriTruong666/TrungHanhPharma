@@ -1,7 +1,7 @@
 import Layout from "@/components/layout";
 import CartPage from "@/pages/cart";
 import ProductListPage from "@/pages/catalog/product-list";
-import CategoryListPage from "@/pages/catalog/category-list";
+import CategoryListPage from "@/pages/catalog";
 import ProductDetailPage from "@/pages/catalog/product-detail";
 import HomePage from "@/pages/home";
 import ProfilePage from "@/pages/profile/index";
@@ -28,7 +28,7 @@ const router = createBrowserRouter(
           element: <CategoryListPage />,
           handle: {
             title: "Danh mục sản phẩm",
-            back: false,
+            back: true,
           },
         },
         {
@@ -42,7 +42,7 @@ const router = createBrowserRouter(
           path: "/profile",
           element: <ProfilePage />,
           handle: {
-            logo: true,
+            title: "Trang cá nhân",
           },
         },
         {
