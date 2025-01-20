@@ -21,7 +21,7 @@ public class ProductController : ControllerBase {
         }
     }
 
-    [HttpGet]
+    [HttpGet("limit")]
     public async Task<ActionResult> GetLimit(int amount){
         try{
             HttpResponseMessage result = await Helper.Client.GetAsync("products.json");

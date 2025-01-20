@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vRxNXUgwKXsvZJ2kEm0+hvGCXZFleCtAoSpFo7AkMXtHzm4g/Darh253+B9gAZBSh380XZuNE7fotVdMGKqdKQ==",
+  "dgSpecHash": "nUq1Pn4oirfweqEQc/3VUzh42WTFbmZ79cNOtMxFXcK0xZkGNUWVdCb2QAyzkuwDXNYXSA6v9MH15CcB9gsa8A==",
   "success": true,
-  "projectFilePath": "/home/Yuuji/git/TrungHanhPharma/BE/BE.csproj",
+  "projectFilePath": "/home/Yuuji/git/TrungHanhPharma/BE/API/API.csproj",
   "expectedPackageFiles": [
     "/home/Yuuji/.nuget/packages/microsoft.aspnet.webapi.client/6.0.0/microsoft.aspnet.webapi.client.6.0.0.nupkg.sha512",
     "/home/Yuuji/.nuget/packages/microsoft.aspnetcore.openapi/8.0.11/microsoft.aspnetcore.openapi.8.0.11.nupkg.sha512",

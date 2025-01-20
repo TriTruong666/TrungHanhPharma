@@ -681,11 +681,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/Yuuji/git/TrungHanhPharma/BE/BE.csproj",
-      "projectName": "BE",
-      "projectPath": "/home/Yuuji/git/TrungHanhPharma/BE/BE.csproj",
+      "projectUniqueName": "/home/Yuuji/git/TrungHanhPharma/BE/API/API.csproj",
+      "projectName": "API",
+      "projectPath": "/home/Yuuji/git/TrungHanhPharma/BE/API/API.csproj",
       "packagesPath": "/home/Yuuji/.nuget/packages/",
-      "outputPath": "/home/Yuuji/git/TrungHanhPharma/BE/obj/",
+      "outputPath": "/home/Yuuji/git/TrungHanhPharma/BE/API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/Yuuji/.nuget/NuGet/NuGet.Config"
