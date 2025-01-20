@@ -1,3 +1,5 @@
+namespace Models;
+
 public class Option{                                                    //  ? nếu ko đụng thì có thể cân nhắc bỏ luôn 
     string name{ get; set; }                                                           //  ? chỉ có 1 cái số lượng và 1 cái là quy cách? 
     number id{ get; set; }
