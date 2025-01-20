@@ -1,10 +1,11 @@
+#nullable disable
 namespace Models;
 
 public class Option{                                                    //  ? nếu ko đụng thì có thể cân nhắc bỏ luôn 
     string name{ get; set; }                                                           //  ? chỉ có 1 cái số lượng và 1 cái là quy cách? 
-    number id{ get; set; }
-    number position{ get; set; }
-    number product_id{ get; set; }
+    int id{ get; set; }
+    int position{ get; set; }
+    int product_id{ get; set; }
 }
 
 public class Inventory_advance{                                         //  ? Docs ko nois ro cai nay nen se can hoi lai 
@@ -16,7 +17,7 @@ public class Inventory_advance{                                         //  ? Do
 
 public class Variant {
     //barcode: string | null,
-    int  compare_at_price{ get; set; } null, //cái này là giá chưa được giảm (nếu có)
+    int compare_at_price{ get; set; } //cái này là giá chưa được giảm (nếu có)
     string created_at{ get; set; }
     //fulfillment_service: string | null,                                       
     int grams{ get; set; }
@@ -29,9 +30,9 @@ public class Variant {
     //position: int,                                                         ? mặc định mình ko dùng variance nên chỉ có 1 position duy nhất à
     int price{ get; set; }
     int product_id{ get; set; }
-    boolean requires_shipping{ get; set; } //                                              ? bộ có sản phầm ko cần giao hàng à?
+    bool requires_shipping{ get; set; } //                                              ? bộ có sản phầm ko cần giao hàng à?
     string  sku{ get; set; } //                                                      ? Chắc chắn cần nhưng có sản phẩm chưa có
-    boolean taxable{ get; set; } //                                                        ? đang ko hiểu sao 91 cái thì chỉ có  1 cái là false
+    bool taxable{ get; set; } //                                                        ? đang ko hiểu sao 91 cái thì chỉ có  1 cái là false
     string title{ get; set; }
     string updated_at{ get; set; }
     string  image_id{ get; set; } 
@@ -68,8 +69,6 @@ public class Product{
     Variant variants{ get; set; }
     string vendor{ get; set; }
     Option options{ get; set; }
-    boolean only_hide_from_list{ get; set; }
-    boolean not_allow_promotion{ get; set; }
+    bool only_hide_from_list{ get; set; }
+    bool not_allow_promotion{ get; set; }
 }
-
-export default Product;
