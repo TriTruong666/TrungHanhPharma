@@ -3,8 +3,11 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using System.Text.Json;
+using Models;
 
 namespace Helper;
+
 public static class Client{
     private static string? apiKey = Helper.Configuration.GetConfiguration()["Others:HaravanToken"];
     private static HttpClient client = new HttpClient();
@@ -21,12 +24,17 @@ public static class Client{
             return true;
         return false;
     }
-    
-    public static async Task<HttpResponseMessage?> GetAsync(string endUri){
+
+    public static async Task<Product[]?> GetAsync(string endUri){
         if( isTokenNull() ){
             Console.WriteLine("Appsetting is missing haravan token");
             return null;
         }
-        return await client.GetAsync(endUri);
+        var res = await client.GetAsync(endUri);
+        string json = await res.Content.ReadAsStringAsync();
+        ProductsArray? temp = JsonSerializer.Deserialize<ProductsArray>(json);
+        if( temp == null || temp.products == null )
+            return null;
+        return temp.products;
     }
 }
