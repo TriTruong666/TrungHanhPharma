@@ -16,6 +16,7 @@
   ],
   "scripts": {
     "start": "zmp start",
+    "preview": "cross-env NODE_ENV=development vite build . --outDir ./www && serve ./www",
     "deploy": "zmp deploy",
     "build:css": "postcss src/css/tailwind.css -o src/css/styles.css"
   },
@@ -31,6 +32,8 @@
     "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.23.0",
     "resize-observer-polyfill": "^1.5.1",
+    "serve": "^14.2.4",
+    "zmp-cli": "^3.15.11",
     "zmp-sdk": "^2.41.0",
     "zmp-ui": "^1.11.5"
   },
