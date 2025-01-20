@@ -1,7 +1,7 @@
 import Layout from "@/components/layout";
 import CartPage from "@/pages/cart";
 import ProductListPage from "@/pages/catalog/product-list";
-import CategoryListPage from "@/pages/catalog/category-list";
+import CategoryListPage from "@/pages/catalog";
 import ProductDetailPage from "@/pages/catalog/product-detail";
 import HomePage from "@/pages/home";
 import ProfilePage from "@/pages/profile";
@@ -27,7 +27,7 @@ const router = createBrowserRouter(
           element: <CategoryListPage />,
           handle: {
             title: "Danh mục sản phẩm",
-            back: false,
+            back: true,
           },
         },
         {
@@ -41,7 +41,7 @@ const router = createBrowserRouter(
           path: "/profile",
           element: <ProfilePage />,
           handle: {
-            logo: true,
+            title: "Trang cá nhân",
           },
         },
         {
@@ -63,7 +63,7 @@ const router = createBrowserRouter(
           path: "/product/:id",
           element: <ProductDetailPage />,
           handle: {
-            scrollRestoration: 0, // when user selects another product in related products, scroll to the top of the page
+            scrollRestoration: 0,
           },
         },
         {
