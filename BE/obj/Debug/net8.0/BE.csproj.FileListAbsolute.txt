@@ -32,3 +32,6 @@
 /home/Yuuji/git/TrungHanhPharma/BE/obj/Debug/net8.0/BE.pdb
 /home/Yuuji/git/TrungHanhPharma/BE/obj/Debug/net8.0/BE.genruntimeconfig.cache
 /home/Yuuji/git/TrungHanhPharma/BE/obj/Debug/net8.0/ref/BE.dll
+/home/Yuuji/git/TrungHanhPharma/BE/bin/Debug/net8.0/System.Net.Http.Formatting.dll
+/home/Yuuji/git/TrungHanhPharma/BE/bin/Debug/net8.0/Newtonsoft.Json.dll
+/home/Yuuji/git/TrungHanhPharma/BE/bin/Debug/net8.0/Newtonsoft.Json.Bson.dll
