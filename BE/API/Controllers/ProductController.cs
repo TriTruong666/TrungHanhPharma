@@ -32,14 +32,14 @@ public class ProductController : ControllerBase {
                 return BadRequest("Product ID is required.");
             }
 
-            Product? product = await ProductRepository.GetById(id);
+            ProductResponse? product = await ProductRepository.GetById(id);
 
             if (product == null)
             {
                 return NotFound($"Product with ID {id} not found.");
             }
 
-            return Ok(product);
+            return Ok(product.product);
         }
         catch (Exception ex)
         {
