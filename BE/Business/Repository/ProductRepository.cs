@@ -14,4 +14,19 @@ public static class ProductRepository{
             return null;
         return temp.products;
     }
+    public static async Task<Product?> GetById(string id)
+    {
+        string endUri = $"products/{id}.json";
+        HttpResponseMessage? res = await Helper.Client.GetAsync(endUri);
+
+        if (res == null || !res.IsSuccessStatusCode)
+            return null;
+
+        string responseData = await res.Content.ReadAsStringAsync();
+        Console.WriteLine("Response Data: " + responseData);
+        Product? productResponse = JsonSerializer.Deserialize<Product>(responseData);
+
+        return productResponse;
+    }
+
 }
