@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "start": "zmp start",
-    "preview": "NODE_ENV=development vite build . --outDir ./www && serve ./www",
+    "preview": "cross-env NODE_ENV=development vite build . --outDir ./www && serve ./www",
     "deploy": "zmp deploy",
     "build:css": "postcss src/css/tailwind.css -o src/css/styles.css"
   },
