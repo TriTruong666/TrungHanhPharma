@@ -1,6 +1,7 @@
 using System.Text.Json;
 using Helper;
 using Microsoft.AspNetCore.Mvc;
+using Repository;
 using Models;
 
 namespace API.Controllers;
@@ -8,18 +9,14 @@ namespace API.Controllers;
 [Route("api/product")]
 [ApiController]
 public class ProductController : ControllerBase {
-    private string apiKey = Helper.Configuration.GetConfiguration()["Others:HaravanToken"]!;
 
     [HttpGet]
     public async Task<ActionResult> GetAll(){
         try{
-            string? json = await Helper.Client.GetAsync("products.json");
-            if( json == null )
-                return StatusCode(StatusCodes.Status422UnprocessableEntity);
-            ProductsArray? temp = JsonSerializer.Deserialize<ProductsArray>(json);
-            if( temp == null )
-                return null!;
-            return StatusCode(StatusCodes.Status200OK, temp.products);
+            Product[]? products = await ProductRepository.GetAll();
+            if( products == null )
+                return StatusCode(StatusCodes.Status400BadRequest);
+            return StatusCode(StatusCodes.Status200OK, products);
         } catch ( Exception ex ) {
             Console.WriteLine(ex);
             return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
