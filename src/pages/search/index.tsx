@@ -5,11 +5,9 @@ import { ProductItemSkeleton } from "@/components/skeleton";
 import { SearchIconLarge } from "@/components/vectors";
 import { useAtom, useAtomValue } from "jotai";
 import { Suspense, useEffect, useRef, useState } from "react";
-import {
-  keywordState,
-  recommendedProductsState,
-  searchResultState,
-} from "@/state";
+import { keywordState, searchResultState } from "@/state";
+import { ProductDefaultCard } from "@/components/product-card";
+import productImg from "@/static/product2.webp";
 
 export function SearchResult() {
   const searchResult = useAtomValue(searchResultState);
@@ -57,17 +55,71 @@ export function SearchResultSkeleton() {
 }
 
 export function RecommendedProducts() {
-  const recommendedProducts = useAtomValue(recommendedProductsState);
-
+  // const recommendedProducts = useAtomValue(recommendedProductsState);
+  const recommendedProducts = [
+    {
+      id: 1,
+      category: "Khac",
+      title:
+        "Chai xịt lạnh Voltogel cold spray giảm đau, chống viêm, thúc đẩy tuần hoàn máu (200ml)",
+      image: productImg,
+      price: 90000,
+      discount: 10,
+    },
+    {
+      id: 2,
+      category: "Khac",
+      title:
+        "Chai xịt lạnh Voltogel cold spray giảm đau, chống viêm, thúc đẩy tuần hoàn máu (200ml)",
+      image: productImg,
+      price: 100000,
+      discount: 20,
+    },
+    {
+      id: 3,
+      category: "Khac",
+      title:
+        "Chai xịt lạnh Voltogel cold spray giảm đau, chống viêm, thúc đẩy tuần hoàn máu (200ml)",
+      image: productImg,
+      price: 100000,
+      discount: 20,
+    },
+    {
+      id: 4,
+      category: "Khac",
+      title:
+        "Chai xịt lạnh Voltogel cold spray giảm đau, chống viêm, thúc đẩy tuần hoàn máu (200ml)",
+      image: productImg,
+      price: 100000,
+      discount: 20,
+    },
+    {
+      id: 5,
+      category: "Khac",
+      title:
+        "Chai xịt lạnh Voltogel cold spray giảm đau, chống viêm, thúc đẩy tuần hoàn máu (200ml)",
+      image: productImg,
+      price: 100000,
+      discount: 20,
+    },
+  ];
   return (
     <Section title="Gợi ý sản phẩm">
-      <div className="py-2 px-4 flex space-x-2 overflow-x-auto">
+      <div className="py-2 px-4 grid grid-cols-2 gap-4">
         {recommendedProducts.map((product) => (
           <div
             className="flex-none"
             style={{ flexBasis: "calc((100vw - 48px) / 2)" }}
           >
-            <ProductItem key={product.id} product={product} />
+            <ProductDefaultCard
+              key={product.id}
+              category={product.category}
+              defaultPrice={product.price}
+              image={product.image}
+              title={product.title}
+              salePercent={product.discount}
+              id={product.id}
+            />
           </div>
         ))}
       </div>

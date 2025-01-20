@@ -14,7 +14,6 @@ export default function CategoryListPage() {
       <div className="py-2">
         <SearchBar onClick={() => navigate("/search")} />
       </div>
-      <CategoryTabs />
       <div className="grid grid-cols-4 p-4 gap-x-4 gap-y-8">
         {categories.map((category) => (
           <TransitionLink

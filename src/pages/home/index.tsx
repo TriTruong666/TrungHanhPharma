@@ -2,9 +2,9 @@ import { useNavigate } from "react-router-dom";
 import Banners from "./banners";
 import SearchBar from "../../components/search-bar";
 import Category from "./category";
-import FlashSales from "./flash-sales";
+import FlashSales from "./flash-sale";
+import MedicineSection from "./thuoc";
 import HorizontalDivider from "@/components/horizontal-divider";
-import CategoryTabs from "@/components/category-tabs";
 
 const HomePage: React.FunctionComponent = () => {
   const navigate = useNavigate();
@@ -15,11 +15,12 @@ const HomePage: React.FunctionComponent = () => {
         <Banners />
       </div>
       <div className="bg-background space-y-2 mt-2">
-        <CategoryTabs />
         <Category />
       </div>
       <HorizontalDivider />
       <FlashSales />
+      <HorizontalDivider />
+      <MedicineSection />
     </div>
   );
 };
