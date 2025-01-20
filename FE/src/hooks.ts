@@ -7,6 +7,7 @@ import { Cart, CartItem, Product, SelectedOptions } from "types";
 import { getDefaultOptions, isIdentical } from "@/utils/cart";
 import { getConfig } from "@/utils/template";
 import { openChat, purchase } from "zmp-sdk";
+import { useNavigate } from "react-router-dom";
 
 export function useRealHeight(
   element: MutableRefObject<HTMLDivElement | null>,
@@ -66,6 +67,7 @@ export function useAddToCart(product: Product, editingCartItemId?: number) {
       });
     }
   }
+  
 
   function handleAppend(quantity: number, cart: Cart) {
     const existed = cart.find(
@@ -155,4 +157,12 @@ export function useRouteHandle() {
   const lastMatch = matches[matches.length - 1];
 
   return [lastMatch.handle, lastMatch, matches] as const;
+}
+
+
+export function usePolicy() {
+  const navigate = useNavigate();
+  return () => {
+    navigate("/policy");
+  };
 }

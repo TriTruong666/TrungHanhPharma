@@ -5,11 +5,11 @@ import {
   VoucherIcon,
   TermsAndPoliciesIcon,
 } from "@/components/vectors";
-import { useToBeImplemented } from "@/hooks";
+import { usePolicy, useToBeImplemented } from "@/hooks";
 
 export default function ProfileActions() {
   const toBeImplemented = useToBeImplemented();
-
+  const navigateToPolicy = usePolicy();
   return (
     <div className="bg-white rounded-lg p-4 flex flex-col gap-4 border-[0.5px] border-black/15">
       {[
@@ -19,7 +19,7 @@ export default function ProfileActions() {
           onClick: toBeImplemented,
         },
         {
-          label: "Đổi voucher",
+          label: "Ví voucher",
           icon: VoucherIcon,
           onClick: toBeImplemented,
         },
@@ -36,7 +36,7 @@ export default function ProfileActions() {
         {
           label: "Chính sách và điều khoản",
           icon: TermsAndPoliciesIcon,
-          onClick: toBeImplemented,
+          onClick: navigateToPolicy,
         },
       ].map((action) => (
         <div

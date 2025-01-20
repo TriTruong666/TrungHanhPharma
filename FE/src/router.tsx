@@ -4,8 +4,9 @@ import ProductListPage from "@/pages/catalog/product-list";
 import CategoryListPage from "@/pages/catalog";
 import ProductDetailPage from "@/pages/catalog/product-detail";
 import HomePage from "@/pages/home";
-import ProfilePage from "@/pages/profile";
+import ProfilePage from "@/pages/profile/index";
 import SearchPage from "@/pages/search";
+import { PolicyPage } from "@/pages/profile/policy";
 import { createBrowserRouter } from "react-router-dom";
 import { getBasePath } from "@/utils/zma";
 
@@ -71,6 +72,13 @@ const router = createBrowserRouter(
           element: <SearchPage />,
           handle: {
             title: "Tìm kiếm",
+          },
+        },
+        {
+          path: "/policy",
+          element: <PolicyPage />,
+          handle: {
+            title: "Chính sách và điều khoản",
           },
         },
       ],
