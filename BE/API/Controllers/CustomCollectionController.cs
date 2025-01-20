@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using Helper;
-using System.Text.Json;
+using Repository;
+using Models;
 
 namespace API.Controllers;
 
@@ -12,7 +12,10 @@ public class CustomCollectionController : ControllerBase {
     [HttpGet]
     public async Task<ActionResult> GetAll(){
         try{
-            return StatusCode(StatusCodes.Status500InternalServerError);
+            CustomCollection[]? temp = await CustomCollectionRepository.GetAll();
+            if( temp == null )
+                return StatusCode(StatusCodes.Status400BadRequest);
+            return StatusCode(StatusCodes.Status200OK, temp);
         } catch ( Exception ex ) {
             Console.WriteLine(ex);
             return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
