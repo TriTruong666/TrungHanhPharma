@@ -10,7 +10,7 @@ namespace API.Controllers;
 [ApiController]
 public class ProductController : ControllerBase {
 
-    [HttpGet]
+    [HttpGet("all")]
     public async Task<ActionResult> GetAll(){
         try{
             Product[]? products = await ProductRepository.GetAll();
@@ -22,6 +22,7 @@ public class ProductController : ControllerBase {
             return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
         }
     }
+
     [HttpGet("{id}")]
     public async Task<ActionResult> GetById(string id)
     {
@@ -31,14 +32,11 @@ public class ProductController : ControllerBase {
             {
                 return BadRequest("Product ID is required.");
             }
-
             ProductResponse? product = await ProductRepository.GetById(id);
-
             if (product == null)
             {
                 return NotFound($"Product with ID {id} not found.");
             }
-
             return Ok(product.product);
         }
         catch (Exception ex)
@@ -48,7 +46,29 @@ public class ProductController : ControllerBase {
         }
     }
 
-    
+    [HttpGet("limit/{limit}")]
+    public async Task<ActionResult> GetByLimit(int limit)
+    {
+        try
+        {
+            if ( limit < 0 )
+            {
+                return BadRequest("Amount must be a positive");
+            }
+            Product[]? product = await ProductRepository.GetByLimit(limit);
+            if (product == null)
+            {
+                return NotFound($"Product with ID {limit} not found.");
+            }
+            Console.WriteLine( product.Count());
+            return Ok(product);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+            return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+        }
+    }
 
 }
 
