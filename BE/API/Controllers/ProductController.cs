@@ -70,6 +70,23 @@ public class ProductController : ControllerBase {
             return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
         }
     }
+    [HttpGet("by-collection/{collectionId}")]
+    public async Task<ActionResult> GetProductsByCollectionId(int collectionId)
+    {
+        try
+        {
+            Product[]? products = await ProductRepository.GetProductWithCollectId(collectionId);
+            if (products == null)
+                return StatusCode(StatusCodes.Status400BadRequest);
+
+            return StatusCode(StatusCodes.Status200OK, products);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex);
+            return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+        }
+    }
 
 }
 

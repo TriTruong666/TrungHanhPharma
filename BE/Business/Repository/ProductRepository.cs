@@ -1,4 +1,4 @@
-using Helper;
+﻿using Helper;
 using System.Net.Http;
 using Models;
 using System.Text.Json;
@@ -42,4 +42,17 @@ public static class ProductRepository{
         }
         return result.ToArray();
     }
+    public static async Task<Product[]?> GetProductWithCollectId(int collectionId)
+    {
+        string url = $"products.json?collection_id={collectionId}";
+        HttpResponseMessage? res = await Helper.Client.GetAsync(url);
+        if (res == null || (int)res.StatusCode != 200)
+            return null;
+        string? json = await res.Content.ReadAsStringAsync();
+        if (json == null || json.Length == 0)
+            return null;
+        ProductsArray? temp = JsonSerializer.Deserialize<ProductsArray>(json); 
+        return temp?.products;
+    }
+
 }
