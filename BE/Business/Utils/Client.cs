@@ -1,10 +1,4 @@
-using System;
-using System.Net;
-using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Threading.Tasks;
-using System.Text.Json;
-using Models;
 
 namespace Helper;
 
@@ -31,5 +25,14 @@ public static class Client{
             return null;
         }
         return await client.GetAsync(endUri);
+    }
+
+    public static async Task<HttpResponseMessage?> PostAsync(string endUri, string body){
+        if( isTokenNull() ){
+            Console.WriteLine("Appsetting is missing haravan token");
+            return null;
+        }
+        Console.WriteLine(body);
+        return await client.PostAsync(endUri, new StringContent(body));
     }
 }

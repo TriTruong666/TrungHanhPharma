@@ -1,61 +1,53 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿#nullable disable
 
-namespace Model.Model
+namespace Models;
+// DiscountCode model (assuming you have this already)
+public class DiscountCode
 {
-    namespace Models
-    {
-        // DiscountCode model (assuming you have this already)
-        public class DiscountCode
-        {
-            public string Code { get; set; }
-            public double Amount { get; set; }
-        }
+    public string code { get; set; }
+    public double amount { get; set; }
+    public string type { get; set; }
+}
 
-        // ItemInCart model
-        public class ItemInCart
-        {
-            public Int64 VariantId { get; set; }
-            public int Quantity { get; set; }
-            public string Sku { get; set; }
-            public string Name { get; set; }
-        }
+// ItemInCart model
+public class ItemInCart
+{
+    public Int64 variant_id { get; set; }
+    public int quantity { get; set; }
+    public string sku { get; set; }
+    public string name { get; set; }
+}
 
-        // NoteAttribute model
-        public class NoteAttribute
-        {
-            public string Name { get; set; }
-            public string Value { get; set; }
-        }
+// NoteAttribute model
+public class NoteAttribute
+{
+    public string name { get; set; }
+    public string value { get; set; }
+}
 
-        // ShippingAddress model
-        public class ShippingAddress
-        {
-            public string Address1 { get; set; }
-            public string FirstName { get; set; }
-            public string LastName { get; set; }
-            public string Phone { get; set; }
-            public string Country { get; set; }
-            public string CountryCode { get; set; }
-            public string Province { get; set; }
-            public string ProvinceCode { get; set; }
-            public string DistrictCode { get; set; }
-            public string District { get; set; }
-            public string WardCode { get; set; }
-            public string Ward { get; set; }
-        }
+// ShippingAddress model
+public class ShippingAddress
+{
+    public string address1 { get; set; }
+    public string first_name { get; set; }
+    public string last_name { get; set; }
+    public string phone { get; set; }
+    public string country { get; set; }
+    public string country_code { get; set; }
+    public string province { get; set; }
+    public string province_code { get; set; }
+    public string district_code { get; set; }
+    public string district { get; set; }
+    public string ward_code { get; set; }
+    public string ward { get; set; }
+}
 
-        // Order model
-        public class Order
-        {
-            public List<ItemInCart> LineItems { get; set; }
-            public double TotalDiscounts { get; set; }
-            public ShippingAddress ShippingAddress { get; set; }
-            public List<DiscountCode> DiscountCodes { get; set; }
-            public string Gateway { get; set; }
-        }
-    }
+// Order model
+public class Order
+{
+    public ItemInCart[] line_items { get; set; }
+    public double total_discounts { get; set; }
+    public ShippingAddress shipping_address { get; set; }
+    public DiscountCode[] discount_codes { get; set; }
+    public string gateway { get; set; }
 }
