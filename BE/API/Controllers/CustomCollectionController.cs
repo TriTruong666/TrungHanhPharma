@@ -7,8 +7,6 @@ namespace API.Controllers;
 [Route("api/custom_collection")]
 [ApiController]
 public class CustomCollectionController : ControllerBase {
-    private string apiKey = Helper.Configuration.GetConfiguration()["Others:HaravanToken"]!;
-
     [HttpGet]
     public async Task<ActionResult> Get(){
         try{

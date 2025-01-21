@@ -34,6 +34,7 @@ public static class OrderRepository{
     }
 
     public static async Task<string> PlaceOrder( OrderRequest cart ){
+        string endUri = "orders.json";
         Order temp = cart.order;
         if( temp.line_items.Length == 0 )
             return "Error: There's no item in cart";
@@ -43,13 +44,19 @@ public static class OrderRepository{
             return "Error: invalid shipping address";
         if( String.IsNullOrEmpty( temp.gateway ) )
             return "Error: Gateway cannot be null";
+        if( cart.order.note_attributes.Length == 0 ) 
+            return "Error: There is no infomation about platform";
 
         string json = JsonSerializer.Serialize(cart);
-        HttpResponseMessage? res = await Helper.Client.PostAsync("", json);
+        HttpResponseMessage? res = await Helper.Client.PostAsync(endUri, json);
         if( res == null )
             return "Error: Missing configuration";
-        if( (int)res.StatusCode != 200 )
+        if( (int)res.StatusCode != 201 ){
+            Console.WriteLine(Helper.Client.GetBaseUrl() + endUri);
+            Console.WriteLine(res.ReasonPhrase);
+            Console.WriteLine( await res.Content.ReadAsStringAsync());
             return "Failed: Unable to create new order";
+        }
         return "OK";
     }
 

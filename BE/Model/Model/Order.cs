@@ -49,5 +49,6 @@ public class Order
     public double total_discounts { get; set; }
     public ShippingAddress shipping_address { get; set; }
     public DiscountCode[] discount_codes { get; set; }
+    public NoteAttribute[] note_attributes { get; set; } 
     public string gateway { get; set; }
 }

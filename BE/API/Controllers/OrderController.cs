@@ -7,7 +7,6 @@ namespace API.Controllers;
 [Route("api/order")]
 [ApiController]
 public class OrderController : ControllerBase {
-    private string apiKey = Helper.Configuration.GetConfiguration()["Others:HaravanToken"]!;
 
     [HttpPost]
     public async Task<ActionResult> GetById(OrderRequest id){
@@ -23,6 +22,7 @@ public class OrderController : ControllerBase {
             return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
         }
     }
+
 }
 
 

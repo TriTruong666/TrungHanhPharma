@@ -1,4 +1,5 @@
 using System.Net.Http.Headers;
+using System.Text;
 
 namespace Helper;
 
@@ -11,6 +12,10 @@ public static class Client{
         client.DefaultRequestHeaders.Accept.Clear();
         client.DefaultRequestHeaders.Accept.Add( new MediaTypeWithQualityHeaderValue("application/json"));
         client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
+    }
+
+    public static string GetBaseUrl(){
+        return client.BaseAddress!.ToString();
     }
 
     private static bool isTokenNull(){
@@ -32,7 +37,6 @@ public static class Client{
             Console.WriteLine("Appsetting is missing haravan token");
             return null;
         }
-        Console.WriteLine(body);
-        return await client.PostAsync(endUri, new StringContent(body));
+        return await client.PostAsync(endUri, new StringContent(body, Encoding.UTF8, "application/json"));
     }
 }
