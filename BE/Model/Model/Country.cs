@@ -5,6 +5,6 @@ public class Country{
     public Int64 id{ get; set; }
     public string name{ get; set; }
 
-    public virtual Province provinces{ get; set; }
+    public virtual Province[] provinces{ get; set; }
 }
 
