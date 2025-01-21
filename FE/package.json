@@ -16,6 +16,7 @@
   ],
   "scripts": {
     "start": "zmp start",
+    "preview": "cross-env NODE_ENV=development vite build . --outDir ./www && serve ./www",
     "deploy": "zmp deploy",
     "build:css": "postcss src/css/tailwind.css -o src/css/styles.css"
   },
@@ -24,6 +25,10 @@
     "@tanstack/react-query": "^5.64.2",
     "@tanstack/react-query-devtools": "^5.64.2",
     "@use-gesture/react": "^10.3.1",
+<<<<<<< HEAD
+=======
+    "crypto-js": "^4.2.0",
+>>>>>>> 372026472d5261a32b27c31933e5e6920e6a4cbb
     "axios": "^1.7.9",
     "embla-carousel-autoplay": "^8.3.0",
     "embla-carousel-react": "^8.3.0",
@@ -33,15 +38,21 @@
     "react-dom": "^18.3.1",
     "react-hot-toast": "^2.4.1",
     "react-router-dom": "^6.23.0",
+    "request": "^2.88.2",
+    "react-slick": "^0.30.3",
     "resize-observer-polyfill": "^1.5.1",
+    "serve": "^14.2.4",
+    "slick-carousel": "^1.8.1",
+    "zmp-cli": "^3.15.11",
     "zmp-sdk": "^2.41.0",
     "zmp-ui": "^1.11.5"
   },
   "devDependencies": {
-    "@types/node": "^22.8.2",
+    "@types/node": "^22.10.7",
     "@types/react": "^18.3.1",
     "@types/react-dom": "^18.3.0",
     "@types/react-router-dom": "^5.3.3",
+    "@types/react-slick": "^0.23.13",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.19",
     "cross-env": "^7.0.3",

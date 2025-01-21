@@ -6,9 +6,14 @@ import { SearchIconLarge } from "@/components/vectors";
 import { useAtom, useAtomValue } from "jotai";
 import { Suspense, useEffect, useRef, useState } from "react";
 import { keywordState, searchResultState } from "@/state";
+<<<<<<< HEAD
 import { ProductDefaultCard } from "@/components/product-card";
 import productImg from "@/static/product2.webp";
 
+=======
+import productImg from "@/static/product.webp";
+import { ProductCard } from "@/components/product-card";
+>>>>>>> 372026472d5261a32b27c31933e5e6920e6a4cbb
 export function SearchResult() {
   const searchResult = useAtomValue(searchResultState);
 
@@ -55,6 +60,7 @@ export function SearchResultSkeleton() {
 }
 
 export function RecommendedProducts() {
+<<<<<<< HEAD
   // const recommendedProducts = useAtomValue(recommendedProductsState);
   const recommendedProducts = [
     {
@@ -101,6 +107,41 @@ export function RecommendedProducts() {
       image: productImg,
       price: 100000,
       discount: 20,
+=======
+  const recommendedProducts = [
+    {
+      id: 1,
+      image: productImg,
+      title:
+        "Thuốc Re-Doo 10mg Reliv điều trị rối loạn chức năng cương dương (2 vỉ x 2 viên)",
+      category: "Thuốc",
+      defaultPrice: 80000,
+      salePercent: 20,
+    },
+    {
+      id: 2,
+      image: productImg,
+      title: "Viên đặt âm đạo Metronizol Neo trị viêm âm đạo (1 vỉ x 10 viên)",
+      category: "Thuốc",
+      defaultPrice: 120000,
+      salePercent: 0,
+    },
+    {
+      id: 3,
+      image: productImg,
+      title: "Siro Deslotid OPV điều trị viêm mũi dị ứng, mày đay (60ml)",
+      category: "Thuốc",
+      defaultPrice: 12000,
+      salePercent: 0,
+    },
+    {
+      id: 4,
+      image: productImg,
+      title: "Viên đặt âm đạo Papil Off  (2 vỉ x 5 viên)",
+      category: "Thuốc",
+      defaultPrice: 180000,
+      salePercent: 0,
+>>>>>>> 372026472d5261a32b27c31933e5e6920e6a4cbb
     },
   ];
   return (
@@ -111,6 +152,7 @@ export function RecommendedProducts() {
             className="flex-none"
             style={{ flexBasis: "calc((100vw - 48px) / 2)" }}
           >
+<<<<<<< HEAD
             <ProductDefaultCard
               key={product.id}
               category={product.category}
@@ -119,6 +161,16 @@ export function RecommendedProducts() {
               title={product.title}
               salePercent={product.discount}
               id={product.id}
+=======
+            <ProductCard
+              key={product.id}
+              category={product.category}
+              image={product.image}
+              defaultPrice={product.defaultPrice}
+              title={product.title}
+              id={product.id}
+              salePercent={product.salePercent}
+>>>>>>> 372026472d5261a32b27c31933e5e6920e6a4cbb
             />
           </div>
         ))}

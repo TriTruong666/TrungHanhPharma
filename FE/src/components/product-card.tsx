@@ -15,7 +15,11 @@ interface ProductDefaultCardProps {
   id?: number;
 }
 
+<<<<<<< HEAD
 export const ProductDefaultCard: FC<ProductDefaultCardProps> = ({
+=======
+export const ProductCard: FC<ProductDefaultCardProps> = ({
+>>>>>>> 372026472d5261a32b27c31933e5e6920e6a4cbb
   image,
   title,
   category,
@@ -30,6 +34,7 @@ export const ProductDefaultCard: FC<ProductDefaultCardProps> = ({
     >
       {/* Sale Percent */}
       {salePercent !== 0 && (
+<<<<<<< HEAD
         <p className="absolute text-[9px] font-bold py-[4px] px-[5px] bg-[#FF6600] text-bgheader top-[3px] left-[3px] z-5 rounded-lg">
           -{salePercent}%
         </p>
@@ -39,6 +44,13 @@ export const ProductDefaultCard: FC<ProductDefaultCardProps> = ({
       {/* <div className="flex items-center justify-center w-[26px] h-[26px] rounded-full absolute right-[5px] top-[10px] z-5 bg-[#FF6600]">
         <BsCartPlus size={14} className="text-white" />
       </div> */}
+=======
+        <p className="absolute text-[9px] font-bold py-[5px] px-[5px] bg-[#FF6600] text-bgheader top-[3px] left-[3px] z-5 rounded-lg">
+          -{salePercent}%
+        </p>
+      )}
+      {/* Icons */}
+>>>>>>> 372026472d5261a32b27c31933e5e6920e6a4cbb
       <img
         src={image}
         alt={title}

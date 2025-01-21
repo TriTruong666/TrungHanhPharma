@@ -361,6 +361,33 @@ export function VoucherIcon() {
   );
 }
 
+export function TermsAndPoliciesIcon() {
+  return (
+    <svg
+      width="24"
+      height="25"
+      viewBox="0 0 24 25"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M7 4.21533H17C18.1046 4.21533 19 5.11076 19 6.21533V18.7153C19 19.8199 18.1046 20.7153 17 20.7153H7C5.89543 20.7153 5 19.8199 5 18.7153V6.21533C5 5.11076 5.89543 4.21533 7 4.21533ZM9 7.71533V8.96533H15V7.71533H9ZM9 11.9653V13.2153H15V11.9653H9ZM9 16.2153V17.4653H12V16.2153H9Z"
+        fill="var(--primary)"
+      />
+      <rect
+        x="0.5"
+        y="0.687988"
+        width="23"
+        height="23.527"
+        stroke="var(--primary)"
+      />
+    </svg>
+  );
+}
+
+
 export function PackageIcon() {
   return (
     <svg

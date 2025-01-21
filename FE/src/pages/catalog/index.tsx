@@ -1,4 +1,3 @@
-import CategoryTabs from "@/components/category-tabs";
 import SearchBar from "@/components/search-bar";
 import TransitionLink from "@/components/transition-link";
 import { useAtomValue } from "jotai";
