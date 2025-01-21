@@ -8,7 +8,11 @@ public class ProvinceResponse{
     public Province[] provinces{ get; set; }
 }
 
-public class CountryReponse{ 
+public class CountryResponse{ 
+    public Country country{ get; set; }
+}
+
+public class CountriesReponse{ 
     public Country[] countries{ get; set; }
 }
 

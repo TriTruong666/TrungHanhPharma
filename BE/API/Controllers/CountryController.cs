@@ -10,7 +10,7 @@ public class CountryController : ControllerBase {
     [HttpGet("{id}")]
     public async Task<ActionResult> ByCountryId(Int64 id){
         try{
-            Country[]? temp = await CountryRepository.GetByCountryId( id );
+            Country? temp = await CountryRepository.GetByCountryId( id );
             if( temp == null )
                 return StatusCode(StatusCodes.Status400BadRequest);
             return StatusCode(StatusCodes.Status200OK, temp);
