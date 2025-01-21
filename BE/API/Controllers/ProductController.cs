@@ -1,4 +1,3 @@
-using System.Text.Json;
 using Helper;
 using Microsoft.AspNetCore.Mvc;
 using Repository;
@@ -10,10 +9,12 @@ namespace API.Controllers;
 [ApiController]
 public class ProductController : ControllerBase {
 
-    [HttpGet("all")]
-    public async Task<ActionResult> GetAll(){
+    //This is a special endpoint with can read and parse custom query (only use for testing and requesting new endpoint)
+    [HttpGet()]
+    public async Task<ActionResult> Get(){
         try{
-            Product[]? products = await ProductRepository.GetAll();
+            string query = this.Request.QueryString.ToString();
+            Product[]? products = await ProductRepository.GetWithQuery( query );
             if( products == null )
                 return StatusCode(StatusCodes.Status400BadRequest);
             return StatusCode(StatusCodes.Status200OK, products);
