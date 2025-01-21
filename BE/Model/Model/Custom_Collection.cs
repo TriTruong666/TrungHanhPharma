@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 namespace Models;
 public class CustomCollection
 {
-    public string BodyHtml { get; set; }
-    public string Handle { get; set; }
+    public string body_html { get; set; }
+    public string handle { get; set; }
 
-    public Int64 Id { get; set; }
-    public bool Published { get; set; }
-    public DateTime PublishedAt { get; set; }
-    public string PublishedScope { get; set; }
+    public Int64 id { get; set; }
+    public bool published { get; set; }
+    public DateTime published_at { get; set; }
+    public string published_scope { get; set; }
 
-    public string Title { get; set; }
-    public DateTime UpdatedAt { get; set; }
-    public int ProductsCount { get; set; }
+    public string title { get; set; }
+    public DateTime updated_at { get; set; }
+    public int products_count { get; set; }
 }

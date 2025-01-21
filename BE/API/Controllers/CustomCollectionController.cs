@@ -10,9 +10,10 @@ public class CustomCollectionController : ControllerBase {
     private string apiKey = Helper.Configuration.GetConfiguration()["Others:HaravanToken"]!;
 
     [HttpGet]
-    public async Task<ActionResult> GetAll(){
+    public async Task<ActionResult> Get(){
         try{
-            CustomCollection[]? temp = await CustomCollectionRepository.GetAll();
+            string query = this.Request.QueryString.ToString();
+            CustomCollection[]? temp = await CustomCollectionRepository.GetWithQuery( query );
             if( temp == null )
                 return StatusCode(StatusCodes.Status400BadRequest);
             return StatusCode(StatusCodes.Status200OK, temp);
@@ -22,5 +23,17 @@ public class CustomCollectionController : ControllerBase {
         }
     }
 
+    [HttpGet("{id}")]
+    public async Task<ActionResult> GetById(Int64 id){
+        try{
+            CustomCollection? temp = await CustomCollectionRepository.GetWithId( id );
+            if( temp == null )
+                return StatusCode(StatusCodes.Status400BadRequest);
+            return StatusCode(StatusCodes.Status200OK, temp);
+        } catch ( Exception ex ) {
+            Console.WriteLine(ex);
+            return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
+        }
+    }
 }
 

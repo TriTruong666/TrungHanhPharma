@@ -6,8 +6,8 @@ using System.Text.Json;
 namespace Repository;
 public static class ProductRepository{
 
-    public static async Task<Product[]?> GetAll(){
-        HttpResponseMessage? res = await Helper.Client.GetAsync("products.json");
+    public static async Task<Product[]?> GetWithQuery(string query){
+        HttpResponseMessage? res = await Helper.Client.GetAsync("products.json" + query);
         if( res == null || (int) res.StatusCode != 200 )
             return null;
         ProductsArray? temp = JsonSerializer.Deserialize<ProductsArray>( await res.Content.ReadAsStringAsync());
@@ -23,7 +23,6 @@ public static class ProductRepository{
         if (res == null || !res.IsSuccessStatusCode)
             return null;
         string responseData = await res.Content.ReadAsStringAsync();
-        Console.WriteLine("Response Data: " + responseData);
         ProductResponse? productResponse = JsonSerializer.Deserialize<ProductResponse>(responseData);
         return productResponse;
     }
